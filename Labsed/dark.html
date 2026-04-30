@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Labsed — Exame Toxicológico | CNH · Empresas · Concursos</title>
+  <link rel="icon" type="image/png" href="midia/favicon.png">
+  <meta name="description"
+    content="Exame toxicológico rápido, confiável e com o melhor preço da região. Laboratório credenciado. Resultados em 24–72h." />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#45B653', dark: '#339940', light: '#e8f8ea' },
+            accent: { DEFAULT: '#317ABE', dark: '#1e5f9e', light: '#e5f0fb' },
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Sora + DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --green: #45B653;
+      --green-dark: #339940;
+      --green-light: #e8f8ea;
+      --blue: #317ABE;
+      --blue-dark: #1e5f9e;
+      --blue-light: #e5f0fb;
+      --ink: #0d1b2a;
+      --ink-mid: #2c3e52;
+      --ink-soft: #5a6a7a;
+      --surface: #f5f7fa;
+      --white: #ffffff;
+      --border: #e4e9ef;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--green-light);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: 'Sora', sans-serif;
+    }
+
+    /* ---- REVEAL ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s cubic-bezier(.22, 1, .36, 1), transform .7s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: none;
+    }
+
+    .d1 {
+      transition-delay: .06s;
+    }
+
+    .d2 {
+      transition-delay: .13s;
+    }
+
+    .d3 {
+      transition-delay: .20s;
+    }
+
+    .d4 {
+      transition-delay: .28s;
+    }
+
+    .d5 {
+      transition-delay: .36s;
+    }
+
+    /* ---- GRADIENT TEXT ---- */
+    .grad-text {
+      background: linear-gradient(135deg, var(--green-dark), var(--blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ---- HERO BG ---- */
+    .hero-bg {
+      background: var(--green-light);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 55% at 75% 60%, rgba(49, 122, 190, .20) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 20% 30%, rgba(69, 182, 83, .12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Medical cross grid */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    /* ---- TICKER ---- */
+    @keyframes ticker {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .ticker-inner {
+      animation: ticker 28s linear infinite;
+    }
+
+    .ticker-inner:hover {
+      animation-play-state: paused;
+    }
+
+    /* ---- PULSE ---- */
+    @keyframes pulseDot {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(69, 182, 83, .55);
+      }
+
+      60% {
+        box-shadow: 0 0 0 7px rgba(69, 182, 83, 0);
+      }
+    }
+
+    .pulse {
+      animation: pulseDot 2.4s infinite;
+    }
+
+    /* ---- FLOAT ---- */
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-9px);
+      }
+    }
+
+    .float {
+      animation: float 5.5s ease-in-out infinite;
+    }
+
+    /* ---- WA PULSE ---- */
+    @keyframes waPulse {
+
+      0%,
+      100% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, .45), 0 0 0 0 rgba(37, 211, 102, .3);
+      }
+
+      50% {
+        box-shadow: 0 8px 32px rgba(37, 211, 102, .6), 0 0 0 10px rgba(37, 211, 102, .08);
+      }
+    }
+
+    .wa-btn {
+      animation: waPulse 2.8s ease infinite;
+    }
+
+    /* ---- FAQ ---- */
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease, padding .3s ease;
+    }
+
+    .faq-body.open {
+      max-height: 280px;
+    }
+
+    .faq-icon {
+      transition: transform .32s ease;
+    }
+
+    .faq-icon.open {
+      transform: rotate(45deg);
+    }
+
+    /* ---- STEP CONNECTOR ---- */
+    .step-wrap:not(:last-child)::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 32px;
+      margin: 4px 0 4px 19px;
+      background: linear-gradient(180deg, var(--green), transparent);
+    }
+
+    /* ---- CARD HOVER ---- */
+    .card {
+      transition: transform .28s ease, box-shadow .28s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 52px rgba(0, 0, 0, .10);
+    }
+
+    /* ---- SECTION EYEBROW ---- */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+      font-family: 'Sora', sans-serif;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      content: '';
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--green);
+      border-radius: 2px;
+    }
+
+    /* ---- BORDER ACCENT ---- */
+    .border-top-accent {
+      border-top: 3px solid transparent;
+      background-clip: padding-box;
+      position: relative;
+    }
+
+    .border-top-accent::before {
+      content: '';
+      position: absolute;
+      top: -3px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--blue));
+      border-radius: 3px 3px 0 0;
+    }
+
+    /* ---- BADGE ---- */
+    .badge-green {
+      background: var(--green-light);
+      color: var(--green-dark);
+    }
+
+    .badge-blue {
+      background: var(--blue-light);
+      color: var(--blue-dark);
+    }
+
+    .badge-amber {
+      background: #fff8e6;
+      color: #92650a;
+    }
+
+    /* SCROLLBAR */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f0f0f0;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+     NAVBAR
+============================================================ -->
+  <nav id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#45B653]/10 shadow-sm transition-all duration-300">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
+
+    <div class="logo-principal w-32">
+      <img src="midia/logo_principal.png" alt="logo-principal" class="w-full">
+    </div>
+
+    <ul class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-600">
+      <li><a href="#NossosDiferenciais" class="hover:text-[#45B653] transition-colors">Nossos Diferenciais</a></li>
+      <!-- Novo item adicionado aqui -->
+      <li><a href="#sobre" class="hover:text-[#45B653] transition-colors">Sobre o Exame</a></li>
+      <li><a href="#sobre-nos" class="hover:text-[#45B653] transition-colors">Quem Somos</a></li>
+      <li><a href="#faq" class="hover:text-[#45B653] transition-colors">Dúvidas</a></li>
+      <li><a href="#contato" class="hover:text-[#45B653] transition-colors">Contato</a></li>
+    </ul>
+
+    <a href="https://wa.me/5541992858515?text=Olá!%20Quero%20agendar%20meu%20exame%20toxicológico." target="_blank"
+      class="flex items-center gap-2 bg-[#45B653] hover:bg-[#3da149] text-white text-sm font-bold px-6 py-2.5 rounded-full transition-all duration-200 shadow-md shadow-green-100"
+      style="font-family:'Sora',sans-serif;">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="hidden sm:inline">Agendar</span>
+    </a>
+  </div>
+</nav>
+
+  <!-- ============================================================
+     HERO
+============================================================ -->
+  <section class="hero-bg min-h-screen flex items-center pt-24 pb-20">
+    <div class="hero-grid"></div>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10 w-full">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+        <!-- LEFT -->
+        <div>
+          <!-- Credential badge -->
+          <div
+            class="reveal inline-flex items-center gap-2.5 border border-black/20 bg-black/5 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
+            <span class="w-2 h-2 rounded-full bg-[#45B653] pulse"></span>
+            <span class="text-black font-medium text-xs tracking-wider uppercase"
+              style="font-family:'Sora',sans-serif;">
+              Laboratório credenciado · DENATRAN
+            </span>
+          </div>
+
+          <h1 class="reveal d1 text-[#0d1b2a] leading-[1.06] tracking-tight mb-6"
+            style="font-family:'Sora',sans-serif; font-size:clamp(2.4rem,5vw,3.6rem); font-weight:700;">
+            Exame Toxicológico<br>
+            <span style="color:#45B653;">Preciso,</span> Rápido<br>
+            e <span
+              style="background:linear-gradient(90deg,#45B653,#317ABE);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Certificado.</span>
+          </h1>
+
+          <p class="reveal d2 text-gray-600 text-lg leading-relaxed mb-10 max-w-md" style="font-weight:300;">
+            Laudos aceitos para primeira <strong class="text-black font-semibold">CNH A/B e renovação C/D/E</strong>, admissões empresariais e
+            concursos públicos. 
+          </p>
+
+          <!-- CTA row -->
+          <div class="reveal d3 flex flex-col sm:flex-row gap-3 mb-12">
+            <a href="https://wa.me/5541992858515?text=Olá!%20Quero%20agendar%20meu%20exame." target="_blank"
+              class="flex items-center justify-center gap-2.5 bg-[#45B653] hover:bg-[#339940] text-white font-semibold text-base px-7 py-4 rounded-lg transition-all duration-200 hover:-translate-y-0.5"
+              style="font-family:'Sora',sans-serif;">
+              <i class="fa-brands fa-whatsapp text-lg"></i> Agendar via WhatsApp
+            </a>
+
+          </div>
+
+          <!-- Stats row -->
+          <div class="reveal d4 flex gap-8 border-t border-white/10 pt-8">
+            <div>
+              <p class="text-[#45B653] font-bold text-2xl mb-0.5" style="font-family:'Sora',sans-serif;">
+                +380
+              </p>
+              <p class="text-black text-xs uppercase tracking-wider font-bold">
+                Clientes atendidos
+              </p>
+            </div>
+            <div class="w-px bg-white/10"></div>
+            <div>
+              <p class="font-bold text-2xl mb-0.5 bg-gradient-to-r from-[#45B653] to-[#3da149] bg-clip-text text-transparent"
+                style="font-family:'Sora',sans-serif;">
+                4.9<span>★</span>
+              </p>
+              <p class="text-black text-xs uppercase tracking-wider font-bold">
+                Avaliação média
+              </p>
+            </div>
+            <div class="w-px bg-white/10"></div>
+
+          </div>
+        </div>
+
+        <!-- RIGHT — clinical card -->
+<div class="reveal d2 float">
+  <div class="bg-white rounded-2xl overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,.4)] border border-white/8">
+    <!-- top accent -->
+    <div class="h-1 w-full" style="background:linear-gradient(90deg,#45B653,#317ABE)"></div>
+
+    <div class="p-8">
+      <!-- Header -->
+      <div class="flex items-center gap-4 mb-8 pb-7 border-b border-[#e4e9ef]">
+        <div class="w-12 h-12 rounded-xl flex items-center justify-center"
+          style="background:linear-gradient(135deg,#e8f8ea,#e5f0fb)">
+          <i class="fa-solid fa-microscope text-xl" style="color:#45B653;"></i>
+        </div>
+        <div>
+          <p class="font-semibold text-[#0d1b2a] text-sm" style="font-family:'Sora',sans-serif;">
+            Exame Toxicológico
+          </p>
+          <p class="text-xs text-[#5a6a7a]">Análise por cabelo / pelo corporal</p>
+        </div>
+        <span class="ml-auto text-[10px] font-bold px-3 py-1.5 rounded-full bg-[#45B653]/10 text-[#45B653] uppercase tracking-wider"
+          style="font-family:'Sora',sans-serif;">
+          Credenciado
+        </span>
+      </div>
+
+      <!-- Metrics: Ajustado para gap-5 para maior respiro -->
+      <div class="grid grid-cols-3 gap-5 mb-7">
+        <div class="text-center p-5 rounded-xl bg-[#f5f7fa] border border-[#e4e9ef]">
+          <p class="text-2xl font-bold text-[#0d1b2a] leading-none mb-2" style="font-family:'Sora',sans-serif;">72h</p>
+          <p class="text-[10px] font-bold text-[#5a6a7a]/60 uppercase tracking-widest">Resultado</p>
+        </div>
+        <div class="text-center p-5 rounded-xl bg-[#f5f7fa] border border-[#e4e9ef]">
+          <p class="text-2xl font-bold text-[#0d1b2a] leading-none mb-2" style="font-family:'Sora',sans-serif;">180d</p>
+          <p class="text-[10px] font-bold text-[#5a6a7a]/60 uppercase tracking-widest">Janela</p>
+        </div>
+        <div class="text-center p-5 rounded-xl bg-[#f5f7fa] border border-[#e4e9ef]">
+          <p class="text-2xl font-bold text-[#0d1b2a] leading-none mb-2" style="font-family:'Sora',sans-serif;">5a</p>
+          <p class="text-[10px] font-bold text-[#5a6a7a]/60 uppercase tracking-widest">Validade</p>
+        </div>
+      </div>
+
+      <!-- Detection Image: Única imagem laboratorio.png com mb-8 para dar espaço -->
+      <!-- Imagem única com bordas arredondadas e sombra interna -->
+<div class="rounded-2xl overflow-hidden mb-8 h-48 shadow-inner border border-black/5">
+  <img src="midia/laboratorio.png" 
+       alt="Laboratório Labsed" 
+       class="w-full h-full object-cover rounded-2xl">
+</div>
+
+      <!-- Tags Informativas: Fonte aumentada para 11px e padding maior -->
+<div class="flex flex-wrap gap-2 pt-2">
+  <span class="bg-[#45B653]/10 text-[#45B653] text-[11px] font-bold px-4 py-2 rounded-lg border border-[#45B653]/10 uppercase tracking-tight">
+    CNH C/D/E
+  </span>
+  <span class="bg-blue-50 text-blue-700 text-[11px] font-bold px-4 py-2 rounded-lg border border-blue-100 uppercase tracking-tight">
+    Empresas
+  </span>
+  <span class="bg-orange-50 text-orange-700 text-[11px] font-bold px-4 py-2 rounded-lg border border-orange-100 uppercase tracking-tight">
+    Concursos
+  </span>
+  <span class="bg-emerald-50 text-emerald-700 text-[11px] font-bold px-4 py-2 rounded-lg border border-emerald-100 uppercase tracking-tight">
+    DENATRAN
+  </span>
+</div>
+
+            
+
+          <!-- Floating badges -->
+          <div
+            class="absolute -top-4 -right-5 bg-white rounded-xl shadow-[0_8px_28px_rgba(0,0,0,.12)] border border-[#e4e9ef] px-4 py-2.5 flex items-center gap-2 hidden lg:flex">
+            <i class="fa-solid fa-shield-check text-[#45B653] text-sm"></i>
+            <span class="text-xs font-semibold text-[#0d1b2a]" style="font-family:'Sora',sans-serif;">Lab
+              Credenciado</span>
+          </div>
+          <div
+            class="absolute -bottom-4 -left-5 bg-white rounded-xl shadow-[0_8px_28px_rgba(0,0,0,.12)] border border-[#e4e9ef] px-4 py-2.5 flex items-center gap-2 hidden lg:flex">
+            <i class="fa-solid fa-file-certificate text-[#317ABE] text-sm"></i>
+            <span class="text-xs font-semibold text-[#0d1b2a]" style="font-family:'Sora',sans-serif;">Laudo com validade
+              legal</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     TICKER STRIP
+============================================================ -->
+  <div class="overflow-hidden border-y border-[#2d8a2a]" style="background:#3baa35;">
+    <div class="ticker-inner flex whitespace-nowrap w-max py-3.5">
+
+      <span class="inline-flex items-center gap-3 px-10 text-white text-xs font-bold tracking-widest uppercase"
+        style="font-family:'Sora',sans-serif;">
+        <i class="fa-solid fa-check text-white text-[10px]"></i> DENATRAN Aprovado
+      </span>
+
+      <span class="inline-flex items-center gap-3 px-10 text-white text-xs font-bold tracking-widest uppercase"
+        style="font-family:'Sora',sans-serif;">
+        <i class="fa-solid fa-check text-white text-[10px]"></i> Resultado em 24–72h
+      </span>
+
+      <span class="inline-flex items-center gap-3 px-10 text-white text-xs font-bold tracking-widest uppercase"
+        style="font-family:'Sora',sans-serif;">
+        <i class="fa-solid fa-check text-white text-[10px]"></i> Janela de 90–180 dias
+      </span>
+
+      <span class="inline-flex items-center gap-3 px-10 text-white text-xs font-bold tracking-widest uppercase"
+        style="font-family:'Sora',sans-serif;">
+        <i class="fa-solid fa-check text-white text-[10px]"></i> Agendamento pelo WhatsApp
+      </span>
+
+      <span class="inline-flex items-center gap-3 px-10 text-white text-xs font-bold tracking-widest uppercase"
+        style="font-family:'Sora',sans-serif;">
+        <i class="fa-solid fa-check text-white text-[10px]"></i> Exames Toxicológicos
+      </span>
+
+      <span class="inline-flex items-center gap-3 px-10 text-white text-xs font-bold tracking-widest uppercase"
+        style="font-family:'Sora',sans-serif;">
+        <i class="fa-solid fa-check text-white text-[10px]"></i> Laudo digital com QR code
+      </span>
+
+      <span class="inline-flex items-center gap-3 px-10 text-white text-xs font-bold tracking-widest uppercase"
+        style="font-family:'Sora',sans-serif;">
+        <i class="fa-solid fa-check text-white text-[10px]"></i> DENATRAN Aprovado
+      </span>
+      <span class="inline-flex items-center gap-3 px-10 text-white text-xs font-bold tracking-widest uppercase"
+        style="font-family:'Sora',sans-serif;">
+        <i class="fa-solid fa-check text-white text-[10px]"></i> Resultado em 24–72h
+      </span>
+      <span class="inline-flex items-center gap-3 px-10 text-white text-xs font-bold tracking-widest uppercase"
+        style="font-family:'Sora',sans-serif;">
+        <i class="fa-solid fa-check text-white text-[10px]"></i> Cursos
+      </span>
+      <span class="inline-flex items-center gap-3 px-10 text-white text-xs font-bold tracking-widest uppercase"
+        style="font-family:'Sora',sans-serif;">
+        <i class="fa-solid fa-check text-white text-[10px]"></i> Agendamento pelo WhatsApp
+      </span>
+      <span class="inline-flex items-center gap-3 px-10 text-white text-xs font-bold tracking-widest uppercase"
+        style="font-family:'Sora',sans-serif;">
+        <i class="fa-solid fa-check text-white text-[10px]"></i> Melhor preço da região
+      </span>
+      <span class="inline-flex items-center gap-3 px-10 text-white text-xs font-bold tracking-widest uppercase"
+        style="font-family:'Sora',sans-serif;">
+        <i class="fa-solid fa-check text-white text-[10px]"></i> Laudo digital com QR code
+      </span>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+     Nossos Diferenciais
+============================================================ -->
+  <section id="NossosDiferenciais" class="py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <div class="grid lg:grid-cols-[1fr_2fr] gap-16 items-start">
+
+        <!-- Left header -->
+        <div class="lg:sticky lg:top-28 reveal">
+          <p class="eyebrow mb-5">Por que nos escolher</p>
+          <h2 class="text-[#0d1b2a] leading-tight mb-5"
+            style="font-family:'Sora',sans-serif; font-size:clamp(1.9rem,3.5vw,2.6rem); font-weight:700;">
+            Nossos
+            Diferenciais
+          </h2>
+          <p class="text-[#5a6a7a] text-base leading-relaxed mb-8">
+            Somos referência em exames toxicológicos. Agilidade, precisão e atendimento que respeita o seu tempo.
+          </p>
+          <a href="https://wa.me/5541992858515?text=Quero%20fazer%20meu%20exame%20hoje!" target="_blank"
+            class="inline-flex items-center gap-2.5 bg-[#45B653] hover:bg-[#339940] text-white font-semibold text-sm px-6 py-3.5 rounded-lg transition-all duration-200 hover:-translate-y-0.5"
+            style="font-family:'Sora',sans-serif;">
+            <i class="fa-brands fa-whatsapp"></i> Fazer meu exame hoje
+          </a>
+        </div>
+
+        <!-- Right grid -->
+        <div class="grid sm:grid-cols-2 gap-4">
+
+          <div class="reveal card bg-white border border-[#e4e9ef] rounded-xl p-6 border-top-accent">
+            <div class="w-10 h-10 rounded-lg bg-[#e8f8ea] flex items-center justify-center mb-5">
+              <i class="fa-solid fa-stopwatch text-[#45B653] text-sm"></i>
+            </div>
+            <h3 class="text-[#0d1b2a] font-semibold text-base mb-2" style="font-family:'Sora',sans-serif;">Resultado
+              Rápido</h3>
+            <p class="text-[#5a6a7a] text-sm leading-relaxed">Laudo disponível em <strong
+                class="text-[#2c3e52] font-medium">24 a 72 horas</strong> úteis. Receba digitalmente por e-mail ou
+              WhatsApp, com assinatura eletrônica.</p>
+          </div>
+
+          <div class="reveal d1 card bg-white border border-[#e4e9ef] rounded-xl p-6 border-top-accent">
+            <div class="w-10 h-10 rounded-lg bg-[#e5f0fb] flex items-center justify-center mb-5">
+              <i class="fa-solid fa-award text-[#317ABE] text-sm"></i>
+            </div>
+            <h3 class="text-[#0d1b2a] font-semibold text-base mb-2" style="font-family:'Sora',sans-serif;">Laboratório
+              Credenciado</h3>
+            <p class="text-[#5a6a7a] text-sm leading-relaxed">Certificado pelo <strong
+                class="text-[#2c3e52] font-medium">DENATRAN</strong> e aceito por empresas, concursos públicos e órgãos
+              governamentais em todo o Brasil.</p>
+          </div>
+
+          <div class="reveal d2 card bg-white border border-[#e4e9ef] rounded-xl p-6 border-top-accent">
+            <div class="w-10 h-10 rounded-lg bg-[#e8f8ea] flex items-center justify-center mb-5">
+              <i class="fa-solid fa-mobile-screen text-[#45B653] text-sm"></i>
+            </div>
+            <h3 class="text-[#0d1b2a] font-semibold text-base mb-2" style="font-family:'Sora',sans-serif;">Sem
+              Burocracia</h3>
+            <p class="text-[#5a6a7a] text-sm leading-relaxed">Facilitamos agendamentos
+              para os colaboradores da sua
+              empresa, atendimentos
+              exclusivos e agilizados.
+            </p>
+          </div>
+
+          <div class="reveal d3 card bg-white border border-[#e4e9ef] rounded-xl p-6 border-top-accent">
+            <div class="w-10 h-10 rounded-lg bg-[#e5f0fb] flex items-center justify-center mb-5">
+              <i class="fa-solid fa-tag text-[#317ABE] text-sm"></i>
+            </div>
+            <h3 class="text-[#0d1b2a] font-semibold text-base mb-2" style="font-family:'Sora',sans-serif;">Melhor Preço
+            </h3>
+            <p class="text-[#5a6a7a] text-sm leading-relaxed">Preços justos e transparentes. <strong
+                class="text-[#2c3e52] font-medium">Parcelamento disponível.</strong> Facilidade na forma de
+              pagamento.</p>
+          </div>
+
+          <div class="reveal d1 card bg-white border border-[#e4e9ef] rounded-xl p-6 border-top-accent">
+            <div class="w-10 h-10 rounded-lg bg-[#e8f8ea] flex items-center justify-center mb-5">
+              <i class="fa-solid fa-user-nurse text-[#45B653] text-sm"></i>
+            </div>
+            <h3 class="text-[#0d1b2a] font-semibold text-base mb-2" style="font-family:'Sora',sans-serif;">Equipe
+              Especializada</h3>
+            <p class="text-[#5a6a7a] text-sm leading-relaxed">Biomédicos e técnicos treinados garantem a <strong
+                class="text-[#2c3e52] font-medium">integridade da coleta e do laudo</strong>, seguindo todos os
+              protocolos.</p>
+          </div>
+
+          <div class="reveal d2 card bg-white border border-[#e4e9ef] rounded-xl p-6 border-top-accent">
+            <div class="w-10 h-10 rounded-lg bg-[#e5f0fb] flex items-center justify-center mb-5">
+              <i class="fa-solid fa-shield-halved text-[#317ABE] text-sm"></i>
+            </div>
+            <h3 class="text-[#0d1b2a] font-semibold text-base mb-2" style="font-family:'Sora',sans-serif;">Total
+              Privacidade</h3>
+            <p class="text-[#5a6a7a] text-sm leading-relaxed">Ambiente discreto e confidencial. Seus dados e resultados
+              são <strong class="text-[#2c3e52] font-medium">protegidos pela LGPD</strong> com máximo rigor.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     SOBRE O EXAME
+============================================================ -->
+  <section id="sobre" class="py-28" style="background:#f8fafc;">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-16 reveal">
+      <p class="eyebrow mb-5 justify-center">Entenda o Processo</p>
+      <h2 class="text-[#0d1b2a]" style="font-family:'Sora',sans-serif; font-size:clamp(1.9rem,3.5vw,2.6rem); font-weight:700;">
+        Como funciona o exame toxicológico?
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+      <!-- LEFT: Texto e Timeline -->
+      <div class="reveal">
+        <div class="max-w-xl mb-10">
+          <p class="text-[#5a6a7a] text-lg leading-relaxed mb-4">
+            O exame utiliza <strong class="text-[#0d1b2a] font-semibold">amostras de cabelo ou pelo corporal</strong> para identificar substâncias psicoativas em uma janela de <strong class="text-[#0d1b2a] font-semibold">90 a 180 dias</strong>.
+          </p>
+          <p class="text-[#5a6a7a] text-base leading-relaxed">
+            Exigido pelo DENATRAN para categorias <strong class="text-[#0d1b2a] font-semibold">C, D e E</strong>, além de concursos e admissões.
+          </p>
+        </div>
+
+        <!-- Alert box: Substâncias -->
+        <div class="flex gap-5 bg-gradient-to-r from-white to-[#f0faf1] border border-[#45B653]/20 rounded-2xl p-6 mb-12 shadow-sm">
+          <div class="w-11 h-11 rounded-xl bg-[#45B653] flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#45B653]/20">
+            <i class="fa-solid fa-flask text-white text-base"></i>
+          </div>
+          <div>
+            <p class="font-bold text-[#0d1b2a] text-sm mb-1" style="font-family:'Sora',sans-serif;">Substâncias Detectadas</p>
+            <p class="text-[13px] text-[#5a6a7a] leading-relaxed">Cocaína, Maconha, Anfetaminas, Opiáceos, Benzodiazepínicos e outros listados pela Anvisa.</p>
+          </div>
+        </div>
+
+        <!-- Steps com Linha Conectora -->
+        <div class="space-y-0 relative">
+          <!-- Linha Vertical Conectora -->
+          <div class="absolute left-[17px] top-4 bottom-10 w-0.5 bg-gradient-to-b from-[#45B653] to-[#317ABE] opacity-20"></div>
+
+          <!-- Step 1 -->
+          <div class="relative flex gap-6 pb-10 group">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-white text-xs font-bold z-10 transition-transform group-hover:scale-110" style="background:linear-gradient(135deg,#45B653,#339940); font-family:'Sora',sans-serif; box-shadow: 0 4px 12px rgba(69,182,83,0.3);">1</div>
+            <div>
+              <p class="font-bold text-[#0d1b2a] text-base mb-1" style="font-family:'Sora',sans-serif;">Coleta Captação</p>
+              <p class="text-sm text-[#5a6a7a]">Realizada de forma rápida em nossa unidade em Curitiba.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="relative flex gap-6 pb-10 group">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-white text-xs font-bold z-10 transition-transform group-hover:scale-110" style="background:linear-gradient(135deg,#45B653,#339940); font-family:'Sora',sans-serif; box-shadow: 0 4px 12px rgba(69,182,83,0.3);">2</div>
+            <div>
+              <p class="font-bold text-[#0d1b2a] text-base mb-1" style="font-family:'Sora',sans-serif;">Identificação Digital</p>
+              <p class="text-sm text-[#5a6a7a]">Captação de imagens e dados integrados diretamente ao sistema.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="relative flex gap-6 pb-10 group">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-white text-xs font-bold z-10 transition-transform group-hover:scale-110" style="background:linear-gradient(135deg,#317ABE,#1e5f9e); font-family:'Sora',sans-serif; box-shadow: 0 4px 12px rgba(49,122,190,0.3);">3</div>
+            <div>
+              <p class="font-bold text-[#0d1b2a] text-base mb-1" style="font-family:'Sora',sans-serif;">Análise Laboratorial</p>
+              <p class="text-sm text-[#5a6a7a]">Exame processado com tecnologia de ponta no próprio Lab Labsed.</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="relative flex gap-6 group">
+            <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-white text-xs font-bold z-10 transition-transform group-hover:scale-110" style="background:linear-gradient(135deg,#317ABE,#1e5f9e); font-family:'Sora',sans-serif; box-shadow: 0 4px 12px rgba(49,122,190,0.3);">4</div>
+            <div>
+              <p class="font-bold text-[#0d1b2a] text-base mb-1" style="font-family:'Sora',sans-serif;">Resultado Online</p>
+              <p class="text-sm text-[#5a6a7a]">Liberação do laudo oficial em até 72h para consulta e impressão.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Clinical Card -->
+      <div class="reveal d2 sticky top-28">
+        <div class="bg-white rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(13,27,42,0.08)] border border-[#e4e9ef]">
+          <div class="h-2 w-full" style="background:linear-gradient(90deg,#45B653,#317ABE)"></div>
+          
+          <div class="p-10">
+            <p class="text-[11px] font-bold text-[#5a6a7a]/60 uppercase tracking-[0.2em] mb-8" style="font-family:'Sora',sans-serif;">Visão Geral do Processo</p>
+
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div class="bg-[#f8fafc] border border-[#e4e9ef] rounded-2xl p-6 flex flex-col items-center gap-3 text-center transition-all hover:border-[#45B653]/30 hover:bg-white hover:shadow-md">
+                <div class="w-12 h-12 rounded-xl bg-[#e8f8ea] flex items-center justify-center text-[#45B653]">
+                  <i class="fa-solid fa-scissors text-lg"></i>
+                </div>
+                <p class="text-[11px] font-bold text-[#0d1b2a] uppercase tracking-wide" style="font-family:'Sora',sans-serif;">Coleta</p>
+              </div>
+              
+              <div class="bg-[#f8fafc] border border-[#e4e9ef] rounded-2xl p-6 flex flex-col items-center gap-3 text-center transition-all hover:border-[#317ABE]/30 hover:bg-white hover:shadow-md">
+                <div class="w-12 h-12 rounded-xl bg-[#e5f0fb] flex items-center justify-center text-[#317ABE]">
+                  <i class="fa-solid fa-vials text-lg"></i>
+                </div>
+                <p class="text-[11px] font-bold text-[#0d1b2a] uppercase tracking-wide" style="font-family:'Sora',sans-serif;">Análise</p>
+              </div>
+            </div>
+
+            <!-- Timeline Divider -->
+            <div class="flex items-center gap-4 text-[11px] font-bold text-[#45B653] mb-8">
+              <span class="flex-1 h-px bg-gradient-to-r from-transparent to-[#e4e9ef]"></span>
+              <span class="bg-[#e8f8ea] px-4 py-1.5 rounded-full uppercase tracking-widest">24 a 72 horas</span>
+              <span class="flex-1 h-px bg-gradient-to-l from-transparent to-[#e4e9ef]"></span>
+            </div>
+
+            <!-- Laudo Card -->
+            <div class="bg-[#45B653] rounded-2xl p-8 text-center text-white shadow-xl shadow-[#45B653]/20 mb-8">
+              <i class="fa-solid fa-circle-check text-3xl mb-4 opacity-90"></i>
+              <p class="font-bold text-lg mb-1" style="font-family:'Sora',sans-serif;">Laudo Oficial</p>
+              <p class="text-sm opacity-90">Pronto para CNH e Concursos</p>
+            </div>
+
+            <!-- Documentos -->
+            <div class="space-y-4 pt-4 border-t border-[#e4e9ef]">
+              <p class="text-[11px] font-bold text-[#5a6a7a]/60 uppercase tracking-[0.2em] mb-4" style="font-family:'Sora',sans-serif;">O que você precisa</p>
+              <div class="grid gap-3">
+                <div class="flex items-center gap-3 text-sm text-[#0d1b2a] font-medium">
+                  <i class="fa-solid fa-check text-[#45B653]"></i> RG ou CNH Original
+                </div>
+                <div class="flex items-center gap-3 text-sm text-[#0d1b2a] font-medium">
+                  <i class="fa-solid fa-check text-[#45B653]"></i> 5 minutos para coleta
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ============================================================
+     SOBRE A EMPRESA 
+============================================================ -->
+
+<!-- Container principal com max-w para não encostar nas bordas do navegador -->
+<div class="max-w-6xl mx-auto px-6">
+  
+  <div class="grid lg:grid-cols-2 gap-12 items-stretch mb-20 reveal">
+    
+    <!-- LADO ESQUERDO -->
+    <div class id="sobre-nos"="flex flex-col justify-center">
+      <p class="eyebrow mb-5">Quem Somos</p>
+      <h2 class="text-[#0d1b2a] mb-6"
+        style="font-family:'Sora',sans-serif; font-size:clamp(1.9rem,3.5vw,2.6rem); font-weight:700;">
+        Nossa História e Compromisso
+      </h2>
+      <div class="space-y-4 text-[#5a6a7a] leading-relaxed">
+        <p>
+          A <strong class="text-[#45B653]">Labsed®</strong> foi fundada no ano de 2018 na cidade de Colombo/PR. Em apenas 3 anos, tornou-se referência absoluta no atendimento de Exames Toxicológicos.
+        </p>
+        <p>
+          Atualmente, possuímos sete unidades estrategicamente localizadas em Curitiba e região metropolitana, levando conveniência e agilidade para nossos clientes.
+        </p>
+        <p>
+          Nosso principal objetivo é ser a maior referência em serviços para motoristas e profissionais de diversas áreas que buscam soluções confiáveis e precisas.
+        </p>
+      </div>
+    </div>
+
+    <!-- LADO DIREITO: ALINHADO COM O TÍTULO -->
+    <div class="flex h-full mt-[45px]"> 
+      <div class="flex-grow w-full relative rounded-3xl overflow-hidden shadow-sm" style="min-height: 450px;">
+        <img src="midia/quem-somos.png" 
+             alt="Unidade Labsed" 
+             class="absolute inset-0 w-full h-full"
+             style="display: block; width: 100%; height: 100%; object-fit: cover; object-position: center;">
+      </div>
+    </div>
+
+  </div>
+</div>
+      
+      <!-- Box de Destaque Visual (Opcional, dá um ar moderno)
+      <div class="bg-white p-8 rounded-3xl border border-[#e4e9ef] shadow-sm relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-[#45B653]/5 rounded-full -mr-16 -mt-16"></div>
+        <div class="relative z-10">
+          <p class="text-4xl font-bold text-[#45B653] mb-2" style="font-family:'Sora',sans-serif;">+7</p>
+          <p class="font-bold text-[#0d1b2a] mb-4">Unidades na Região</p>
+          <p class="text-sm text-[#5a6a7a]">Atendimento especializado em Curitiba e Região Metropolitana para sua total comodidade.</p>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- Divisor sutil -->
+    <div class="border-t border-[#e4e9ef] mb-20"></div>
+
+    <!-- Cards Missão, Visão e Valores -->
+    <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+      
+      <!-- Missão -->
+      <div class="bg-white p-8 rounded-3xl border border-[#e4e9ef] shadow-sm hover:border-[#45B653]/30 transition-all">
+        <div class="w-12 h-12 rounded-2xl bg-[#45B653]/10 flex items-center justify-center mb-6">
+          <i class="fa-solid fa-bullseye text-[#45B653] text-xl"></i>
+        </div>
+        <h3 class="text-lg font-bold text-[#0d1b2a] mb-4" style="font-family:'Sora',sans-serif;">Missão</h3>
+        <p class="text-sm text-[#5a6a7a] leading-relaxed">
+          Proporcionar soluções seguras, ágeis e éticas em coletas toxicológicas e formação profissional, promovendo saúde, segurança e empregabilidade.
+        </p>
+      </div>
+
+      <!-- Visão -->
+      <div class="bg-white p-8 rounded-3xl border border-[#e4e9ef] shadow-sm hover:border-[#317ABE]/30 transition-all">
+        <div class="w-12 h-12 rounded-2xl bg-[#317ABE]/10 flex items-center justify-center mb-6">
+          <i class="fa-solid fa-eye text-[#317ABE] text-xl"></i>
+        </div>
+        <h3 class="text-lg font-bold text-[#0d1b2a] mb-4" style="font-family:'Sora',sans-serif;">Visão</h3>
+        <p class="text-sm text-[#5a6a7a] leading-relaxed">
+          Ser referência nacional em qualidade e confiabilidade no segmento de coletas toxicológicas e treinamentos profissionais.
+        </p>
+      </div>
+
+      <!-- Valores -->
+      <div class="bg-white p-8 rounded-3xl border border-[#e4e9ef] shadow-sm hover:border-[#f59e0b]/30 transition-all">
+        <div class="w-12 h-12 rounded-2xl bg-[#f59e0b]/10 flex items-center justify-center mb-6">
+          <i class="fa-solid fa-handshake text-[#f59e0b] text-xl"></i>
+        </div>
+        <h3 class="text-lg font-bold text-[#0d1b2a] mb-4" style="font-family:'Sora',sans-serif;">Valores</h3>
+        <ul class="grid grid-cols-1 gap-y-3">
+          <li class="flex items-center gap-2 text-sm text-[#5a6a7a]">
+            <i class="fa-solid fa-check text-[#f59e0b] text-[10px]"></i> Ética e Respeito
+          </li>
+          <li class="flex items-center gap-2 text-sm text-[#5a6a7a]">
+            <i class="fa-solid fa-check text-[#f59e0b] text-[10px]"></i> Qualidade e Confiança
+          </li>
+          <li class="flex items-center gap-2 text-sm text-[#5a6a7a]">
+            <i class="fa-solid fa-check text-[#f59e0b] text-[10px]"></i> Excelência no Atendimento
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+     CURSOS 
+============================================================ -->
+  <section class="py-28 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-14 reveal">
+      <p class="eyebrow mb-5 justify-center">
+        Formação
+      </p>
+      <h2 class="text-[#0d1b2a]"
+        style="font-family:'Sora',sans-serif; font-size:clamp(1.9rem,3.5vw,2.6rem); font-weight:700;">
+        Cursos Labsed
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <div class="reveal d1 card bg-white border border-[#e4e9ef] rounded-xl p-8 shadow-sm">
+        <h3 class="font-bold text-lg mb-4" style="font-family:'Sora',sans-serif; color:#3baa35;">
+          Mopp
+        </h3>
+        <p class="text-[#5a6a7a] text-sm leading-relaxed">
+Movimentação e operação
+de produtos perigosos        </p>
+      </div>
+
+      <div class="reveal d2 card bg-white border border-[#e4e9ef] rounded-xl p-8 shadow-sm">
+        <h3 class="font-bold text-lg mb-4" style="font-family:'Sora',sans-serif; color:#3baa35;">
+          Coletivo
+        </h3>
+        <p class="text-[#5a6a7a] text-sm leading-relaxed">
+Transporte de passageiros
+        </p>
+      </div>
+
+      <div class="reveal d3 card bg-white border border-[#e4e9ef] rounded-xl p-8 shadow-sm">
+        <h3 class="font-bold text-lg mb-4" style="font-family:'Sora',sans-serif; color:#3baa35;">
+          Escolar
+        </h3>
+        <p class="text-[#5a6a7a] text-sm leading-relaxed">
+Transporte de estudantes
+        </p>
+      </div>
+
+      <div class="reveal d1 card bg-white border border-[#e4e9ef] rounded-xl p-8 shadow-sm">
+        <h3 class="font-bold text-lg mb-4" style="font-family:'Sora',sans-serif; color:#3baa35;">
+          Indivisível
+        </h3>
+        <p class="text-[#5a6a7a] text-sm leading-relaxed">
+Cargas especiais e excedentes
+        </p>
+      </div>
+
+      <div class="reveal d2 card bg-white border border-[#e4e9ef] rounded-xl p-8 shadow-sm">
+        <h3 class="font-bold text-lg mb-4" style="font-family:'Sora',sans-serif; color:#3baa35;">
+Emergência        </h3>
+        <p class="text-[#5a6a7a] text-sm leading-relaxed">
+Situações de risco e atendimento
+emergencial        </p>
+      </div>
+
+      <div class="reveal d3 card bg-white border border-[#e4e9ef] rounded-xl p-8 shadow-sm">
+        <h3 class="font-bold text-lg mb-4" style="font-family:'Sora',sans-serif; color:#3baa35;">
+          NR’s
+        </h3>
+        <p class="text-[#5a6a7a] text-sm leading-relaxed">
+Normas
+Regulamentadoras        </p>
+      </div>
+
+    </div> </div>
+</section>
+
+  <!-- ============================================================
+     FAQ
+============================================================ -->
+  <section id="faq" class="py-28" style="background:#f5f7fa;">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <div class="text-center mb-14 reveal">
+        <p class="eyebrow mb-5 justify-center">Dúvidas Frequentes</p>
+        <h2 class="text-[#0d1b2a] mb-4"
+          style="font-family:'Sora',sans-serif; font-size:clamp(1.9rem,3.5vw,2.6rem); font-weight:700;">
+          Perguntas e Respostas
+        </h2>
+        <p class="text-[#5a6a7a]">Respondemos as dúvidas mais comuns sobre o exame toxicológico.</p>
+      </div>
+
+      <div class="flex flex-col gap-2 reveal">
+
+        <div class="bg-white border border-[#e4e9ef] rounded-xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
+            <span class="font-semibold text-[#0d1b2a] text-sm" style="font-family:'Sora',sans-serif;">Quais documentos
+              são necessários?</span>
+            <i class="fa-solid fa-plus faq-icon text-[#317ABE] text-sm flex-shrink-0"></i>
+          </button>
+          <div class="faq-body">
+            <div class="px-6 pb-5 text-sm text-[#5a6a7a] leading-relaxed border-t border-[#e4e9ef] pt-4">
+              Documento de identidade com foto (RG, CNH ou Passaporte). Para fins de CNH, apenas o documento de
+              identificação. Para empresa ou concurso, verifique se há formulário específico. Entre em contato para
+              confirmar seu caso.
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-[#e4e9ef] rounded-xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
+            <span class="font-semibold text-[#0d1b2a] text-sm" style="font-family:'Sora',sans-serif;">Quanto tempo
+              demora para sair o resultado?</span>
+            <i class="fa-solid fa-plus faq-icon text-[#317ABE] text-sm flex-shrink-0"></i>
+          </button>
+          <div class="faq-body">
+            <div class="px-6 pb-5 text-sm text-[#5a6a7a] leading-relaxed border-t border-[#e4e9ef] pt-4">
+              O prazo médio é de <strong class="text-[#2c3e52] font-medium">24 a 72 horas úteis</strong> após a coleta.
+              O laudo é enviado por e-mail e WhatsApp com assinatura digital. Em casos de urgência, consulte nossa
+              equipe.
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-[#e4e9ef] rounded-xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
+            <span class="font-semibold text-[#0d1b2a] text-sm" style="font-family:'Sora',sans-serif;">Por quanto tempo o
+              laudo é válido para a CNH?</span>
+            <i class="fa-solid fa-plus faq-icon text-[#317ABE] text-sm flex-shrink-0"></i>
+          </button>
+          <div class="faq-body">
+            <div class="px-6 pb-5 text-sm text-[#5a6a7a] leading-relaxed border-t border-[#e4e9ef] pt-4">
+              <strong class="text-[#2c3e52] font-medium">5 anos</strong> para motoristas com até 69 anos e <strong
+                class="text-[#2c3e52] font-medium">2 anos e 6 meses</strong> para condutores com 70 anos ou mais,
+              conforme normas do CONTRAN.
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-[#e4e9ef] rounded-xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
+            <span class="font-semibold text-[#0d1b2a] text-sm" style="font-family:'Sora',sans-serif;">O exame precisa de
+              preparação prévia?</span>
+            <i class="fa-solid fa-plus faq-icon text-[#317ABE] text-sm flex-shrink-0"></i>
+          </button>
+          <div class="faq-body">
+            <div class="px-6 pb-5 text-sm text-[#5a6a7a] leading-relaxed border-t border-[#e4e9ef] pt-4">
+              Não é necessário jejum nem preparação especial. A coleta dura menos de 5 minutos e é indolor. Evite apenas
+              tingir ou descolorir o cabelo nos dias anteriores. Sem cabelo? Usamos pelo corporal.
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-[#e4e9ef] rounded-xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
+            <span class="font-semibold text-[#0d1b2a] text-sm" style="font-family:'Sora',sans-serif;">É aceito para
+              concursos e empresas privadas?</span>
+            <i class="fa-solid fa-plus faq-icon text-[#317ABE] text-sm flex-shrink-0"></i>
+          </button>
+          <div class="faq-body">
+            <div class="px-6 pb-5 text-sm text-[#5a6a7a] leading-relaxed border-t border-[#e4e9ef] pt-4">
+              Sim! Nosso laboratório é credenciado e nossos laudos são aceitos em concursos públicos, processos
+              seletivos, exames admissionais e periódicos em todo o Brasil. O documento possui código de verificação
+              digital.
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-[#e4e9ef] rounded-xl overflow-hidden">
+          <button onclick="toggleFaq(this)" class="w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
+            <span class="font-semibold text-[#0d1b2a] text-sm" style="font-family:'Sora',sans-serif;">Qual é o preço do
+              exame?</span>
+            <i class="fa-solid fa-plus faq-icon text-[#317ABE] text-sm flex-shrink-0"></i>
+          </button>
+          <div class="faq-body">
+            <div class="px-6 pb-5 text-sm text-[#5a6a7a] leading-relaxed border-t border-[#e4e9ef] pt-4">
+              Temos os melhores preços da região. Os valores variam conforme a finalidade (CNH, empresa, concurso).
+              Entre em contato pelo WhatsApp para uma cotação personalizada. Aceitamos Pix, débito, crédito e oferecemos
+              desconto para grupos.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-center mt-10 reveal">
+        <p class="text-sm text-[#5a6a7a] mb-5">Ainda com dúvidas? Fale diretamente com nossa equipe.</p>
+        <a href="https://wa.me/5541992858515?text=Tenho%20dúvidas%20sobre%20o%20exame%20toxicológico." target="_blank"
+          class="inline-flex items-center gap-2.5 bg-[#45B653] hover:bg-[#339940] text-white font-semibold px-7 py-4 rounded-lg transition-all duration-200 hover:-translate-y-0.5"
+          style="font-family:'Sora',sans-serif;">
+          <i class="fa-brands fa-whatsapp"></i>
+          Tirar dúvidas no WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+     CONTATO & LOCALIZAÇÃO
+============================================================ -->
+  <section id="contato" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-14 reveal">
+      <p class="eyebrow mb-5 justify-center">Localização</p>
+      <h2 class="text-[#0d1b2a] mb-3"
+        style="font-family:'Sora',sans-serif; font-size:clamp(1.9rem,3.5vw,2.6rem); font-weight:700;">
+        Onde Estamos
+      </h2>
+      <p class="text-[#5a6a7a]">Conheça nossas unidades e pontos de atendimento.</p>
+    </div>
+
+    <!-- Lista de Cidades / Unidades -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal">
+      
+      <!-- Colombo - Matriz -->
+      <div class="flex items-center gap-4 p-6 bg-[#f5f7fa] border border-[#e4e9ef] rounded-xl transition-colors hover:border-[#45B653]/30">
+        <div class="w-10 h-10 rounded-lg bg-white border border-[#e4e9ef] flex items-center justify-center shadow-sm">
+          <i class="fa-solid fa-location-dot text-[#45B653]"></i>
+        </div>
+        <div>
+          <p class="font-bold text-[#0d1b2a]" style="font-family:'Sora',sans-serif;">Matriz | Colombo - PR</p>
+          <p class="text-xs text-[#5a6a7a]">Rua Da Pedreira, 101 – Campo Pequeno – Sala 01 - Colombo/Paraná – CEP 83.441-010 | Matriz</p>
+          
+        </div>
+      </div>
+
+      <!-- Unidades de Atendimento Padrão -->
+      <div class="flex items-center gap-4 p-6 bg-[#f5f7fa] border border-[#e4e9ef] rounded-xl transition-colors hover:border-[#45B653]/30">
+        <div class="w-10 h-10 rounded-lg bg-white border border-[#e4e9ef] flex items-center justify-center shadow-sm">
+          <i class="fa-solid fa-location-dot text-[#317ABE]"></i>
+        </div>
+        <div>
+          <p class="font-bold text-[#0d1b2a]" style="font-family:'Sora',sans-serif;">Curitiba - PR</p>
+          <p class="text-xs text-[#5a6a7a]">Unidade de Atendimento</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 p-6 bg-[#f5f7fa] border border-[#e4e9ef] rounded-xl transition-colors hover:border-[#45B653]/30">
+        <div class="w-10 h-10 rounded-lg bg-white border border-[#e4e9ef] flex items-center justify-center shadow-sm">
+          <i class="fa-solid fa-location-dot text-[#317ABE]"></i>
+        </div>
+        <div>
+          <p class="font-bold text-[#0d1b2a]" style="font-family:'Sora',sans-serif;">Joinville - SC</p>
+          <p class="text-xs text-[#5a6a7a]">Unidade de Atendimento</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 p-6 bg-[#f5f7fa] border border-[#e4e9ef] rounded-xl transition-colors hover:border-[#45B653]/30">
+        <div class="w-10 h-10 rounded-lg bg-white border border-[#e4e9ef] flex items-center justify-center shadow-sm">
+          <i class="fa-solid fa-location-dot text-[#317ABE]"></i>
+        </div>
+        <div>
+          <p class="font-bold text-[#0d1b2a]" style="font-family:'Sora',sans-serif;">Alm. Tamandaré - PR</p>
+          <p class="text-xs text-[#5a6a7a]">Unidade de Atendimento</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 p-6 bg-[#f5f7fa] border border-[#e4e9ef] rounded-xl transition-colors hover:border-[#45B653]/30">
+        <div class="w-10 h-10 rounded-lg bg-white border border-[#e4e9ef] flex items-center justify-center shadow-sm">
+          <i class="fa-solid fa-location-dot text-[#317ABE]"></i>
+        </div>
+        <div>
+          <p class="font-bold text-[#0d1b2a]" style="font-family:'Sora',sans-serif;">Campo Largo - PR</p>
+          <p class="text-xs text-[#5a6a7a]">Unidade de Atendimento</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 p-6 bg-[#f5f7fa] border border-[#e4e9ef] rounded-xl transition-colors hover:border-[#45B653]/30">
+        <div class="w-10 h-10 rounded-lg bg-white border border-[#e4e9ef] flex items-center justify-center shadow-sm">
+          <i class="fa-solid fa-location-dot text-[#317ABE]"></i>
+        </div>
+        <div>
+          <p class="font-bold text-[#0d1b2a]" style="font-family:'Sora',sans-serif;">Campina Grande do Sul - PR</p>
+          <p class="text-xs text-[#5a6a7a]">Unidade de Atendimento</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 p-6 bg-[#f5f7fa] border border-[#e4e9ef] rounded-xl transition-colors hover:border-[#45B653]/30">
+        <div class="w-10 h-10 rounded-lg bg-white border border-[#e4e9ef] flex items-center justify-center shadow-sm">
+          <i class="fa-solid fa-location-dot text-[#317ABE]"></i>
+        </div>
+        <div>
+          <p class="font-bold text-[#0d1b2a]" style="font-family:'Sora',sans-serif;">Araucária - PR</p>
+          <p class="text-xs text-[#5a6a7a]">Unidade de Atendimento</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 p-6 bg-[#f5f7fa] border border-[#e4e9ef] rounded-xl transition-colors hover:border-[#45B653]/30">
+        <div class="w-10 h-10 rounded-lg bg-white border border-[#e4e9ef] flex items-center justify-center shadow-sm">
+          <i class="fa-solid fa-location-dot text-[#317ABE]"></i>
+        </div>
+        <div>
+          <p class="font-bold text-[#0d1b2a]" style="font-family:'Sora',sans-serif;">Caçador - SC</p>
+          <p class="text-xs text-[#5a6a7a]">Unidade de Atendimento</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 p-6 bg-[#f5f7fa] border border-[#e4e9ef] rounded-xl transition-colors hover:border-[#45B653]/30">
+        <div class="w-10 h-10 rounded-lg bg-white border border-[#e4e9ef] flex items-center justify-center shadow-sm">
+          <i class="fa-solid fa-location-dot text-[#317ABE]"></i>
+        </div>
+        <div>
+          <p class="font-bold text-[#0d1b2a]" style="font-family:'Sora',sans-serif;">Ferraz de Vasconcelos - SP</p>
+          <p class="text-xs text-[#5a6a7a]">Unidade de Atendimento</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ============================================================
+     FOOTER
+============================================================ -->
+  <footer style="background:#3baa35;" class="pt-16 pb-8">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center mb-5">
+          <!-- Removido o filtro de inversão para manter as cores originais -->
+          <img src="midia/logo_principal.png" 
+               alt="Logo Labsed" 
+               class="h-12 w-auto object-contain bg-white p-2 rounded-lg"> 
+          <!-- Adicionei um fundo branco suave e padding para o logo colorido não "brigar" com o fundo verde -->
+        </div>
+        <p class="text-sm text-white leading-relaxed mb-6">
+          Laboratório especializado em exames toxicológicos.
+          Credenciado, confiável e moderno.
+        </p>
+        <div class="flex gap-2">
+          <a href="https://www.instagram.com/labsedbrasil/" target="_blank"
+            class="w-9 h-9 rounded-lg flex items-center justify-center text-white hover:bg-white/20 transition-colors text-sm border border-white">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/labsedbrasil" target="_blank"
+            class="w-9 h-9 rounded-lg flex items-center justify-center text-white hover:bg-white/20 transition-colors text-sm border border-white">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a href="https://wa.me/5541992858515" target="_blank"
+            class="w-9 h-9 rounded-lg flex items-center justify-center text-white hover:bg-[#25D366] transition-colors text-sm border border-white">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links (Branco Forte conforme solicitado) -->
+      <div>
+        <p class="text-white font-bold text-sm mb-5" style="font-family:'Sora',sans-serif;">Links Rápidos</p>
+        <ul class="flex flex-col gap-3 text-sm text-white">
+          <li><a href="#NossosDiferenciais" class="hover:underline">Nossos Diferenciais</a></li>
+          <li><a href="#sobre-nos" class="hover:underline">Quem Somos</a></li>
+          <li><a href="#sobre" class="hover:underline">Sobre o Exame</a></li>
+          <li><a href="#faq" class="hover:underline">Dúvidas Frequentes</a></li>
+        </ul>
+      </div>
+
+      <!-- Serviços (Branco Forte) -->
+      <div>
+        <p class="text-white font-bold text-sm mb-5" style="font-family:'Sora',sans-serif;">Serviços</p>
+        <ul class="flex flex-col gap-3 text-sm text-white">
+          <li>Exame para CNH C/D/E</li>
+          <li>Exame Admissional</li>
+          <li>Exame para Concursos</li>
+          <li>Exames Corporativos</li>
+        </ul>
+      </div>
+
+      <!-- Contato (Branco Forte) -->
+      <div>
+        <p class="text-white font-bold text-sm mb-5" style="font-family:'Sora',sans-serif;">Contato</p>
+        <ul class="flex flex-col gap-3.5 text-sm text-white">
+          <li class="flex items-center gap-2.5"><i class="fa-solid fa-phone w-4 text-xs"></i>(41) 99285-8515</li>
+          <li class="flex items-center gap-2.5"><i class="fa-solid fa-envelope w-4 text-xs"></i>contato@labsed.com.br</li>
+          <li class="flex items-start gap-2.5">
+            <i class="fa-solid fa-clock w-4 text-xs mt-0.5"></i>
+            <span>Seg–Sex 7h–18h<br>Sáb 7h–13h</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Rodapé Inferior -->
+    <div class="border-t border-white pt-7 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white font-medium">
+      <p>© 2026 Labsed. Todos os direitos reservados.</p>
+      <p>Desenvolvido com cuidado para a sua saúde.</p>
+    </div>
+  </div>
+</footer>
+
+  <!-- ============================================================
+     FLOATING WHATSAPP
+============================================================ -->
+  <a href="https://wa.me/5541992858515?text=Olá!%20Quero%20agendar%20meu%20exame%20toxicológico." target="_blank"
+    class="wa-btn fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center bg-[#25D366] text-white text-2xl hover:scale-105 transition-transform duration-200">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- ============================================================
+     JS
+============================================================ -->
+  <script>
+    // Navbar scroll - Estilo Fixo e Branco
+    const navbar = document.getElementById('navbar');
+    // Selecionamos a div interna que tem o padding (py-4)
+    const navContainer = navbar.querySelector('div');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        // Ao rolar: Encolhe o padding e aumenta a sombra
+        navContainer.classList.remove('py-4');
+        navContainer.classList.add('py-2');
+        navbar.classList.add('shadow-md');
+        navbar.style.borderBottom = '1px solid rgba(69, 182, 83, 0.2)';
+      } else {
+        // No topo: Volta ao tamanho original, mas continua branca
+        navContainer.classList.remove('py-2');
+        navContainer.classList.add('py-4');
+        navbar.classList.remove('shadow-md');
+        navbar.classList.add('shadow-sm');
+      }
+    });
+
+    // --- Mantendo o restante das suas funções ---
+
+    // Reveal (Animações de entrada)
+    const revealEls = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('show');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    revealEls.forEach(el => obs.observe(el));
+
+    // FAQ (Acordeão)
+    function toggleFaq(btn) {
+      const body = btn.nextElementSibling;
+      const icon = btn.querySelector('.faq-icon');
+      const isOpen = body.classList.contains('open');
+
+      document.querySelectorAll('.faq-body').forEach(b => b.classList.remove('open'));
+      document.querySelectorAll('.faq-icon').forEach(c => c.classList.remove('open'));
+
+      if (!isOpen) {
+        body.classList.add('open');
+        icon.classList.add('open');
+      }
+    }
+  </script>
+
+</body>
+
+</html>

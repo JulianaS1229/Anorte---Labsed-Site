@@ -344,7 +344,7 @@
       <!-- Novo item adicionado aqui -->
       <li><a href="#sobre" class="hover:text-[#45B653] transition-colors">Sobre o Exame</a></li>
       <li><a href="#sobre-nos" class="hover:text-[#45B653] transition-colors">Quem Somos</a></li>
-      <li><a href="#faq" class="hover:text-[#45B653] transition-colors">Dúvidas</a></li>
+    
       <li><a href="#contato" class="hover:text-[#45B653] transition-colors">Contato</a></li>
     </ul>
 
@@ -360,157 +360,113 @@
   <!-- ============================================================
      HERO
 ============================================================ -->
-  <section class="hero-bg min-h-screen flex items-center pt-24 pb-20">
-    <div class="hero-grid"></div>
+  <section class="hero-bg min-h-screen flex items-center pt-24 pb-20 relative">
+  <div class="hero-grid"></div>
 
-    <div class="max-w-6xl mx-auto px-6 relative z-10 w-full">
-      <div class="grid lg:grid-cols-2 gap-16 items-center">
+  <div class="max-w-6xl mx-auto px-6 relative z-10 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
 
-        <!-- LEFT -->
-        <div>
-          <!-- Credential badge -->
-          <div
-            class="reveal inline-flex items-center gap-2.5 border border-black/20 bg-black/5 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
-            <span class="w-2 h-2 rounded-full bg-[#45B653] pulse"></span>
-            <span class="text-black font-medium text-xs tracking-wider uppercase"
-              style="font-family:'Sora',sans-serif;">
-              Laboratório credenciado · DENATRAN
-            </span>
-          </div>
-
-          <h1 class="reveal d1 text-[#0d1b2a] leading-[1.06] tracking-tight mb-6"
-            style="font-family:'Sora',sans-serif; font-size:clamp(2.4rem,5vw,3.6rem); font-weight:700;">
-            Exame Toxicológico<br>
-            <span style="color:#45B653;">Preciso, Rápido</span> <br>
-            e <span
-              style="background:linear-gradient(90deg,#45B653,#317ABE);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Certificado.</span>
-          </h1>
-
-          <p class="reveal d2 text-gray-600 text-lg leading-relaxed mb-10 max-w-md" style="font-weight:300;">
-            Laudos aceitos para primeira <strong class="text-black font-semibold">CNH A/B e renovação C/D/E</strong>, admissões empresariais e
-            concursos públicos. 
-          </p>
-
-          <!-- CTA row -->
-          <div class="reveal d3 flex flex-col sm:flex-row gap-3 mb-12">
-            <a href="https://wa.me/5541992858515?text=Olá!%20Quero%20agendar%20meu%20exame." target="_blank"
-              class="flex items-center justify-center gap-2.5 bg-[#45B653] hover:bg-[#339940] text-white font-semibold text-base px-7 py-4 rounded-lg transition-all duration-200 hover:-translate-y-0.5"
-              style="font-family:'Sora',sans-serif;">
-              <i class="fa-brands fa-whatsapp text-lg"></i> Agendar via WhatsApp
-            </a>
-
-          </div>
-
-          <!-- Stats row -->
-          <div class="reveal d4 flex gap-8 border-t border-white/10 pt-8">
-            <div>
-              <!-- <p class="text-[#45B653] font-bold text-2xl mb-0.5" style="font-family:'Sora',sans-serif;">
-                +380
-              </p>
-              <p class="text-black text-xs uppercase tracking-wider font-bold">
-                Clientes atendidos
-              </p> -->
-            </div>
-            <div class="w-px bg-white/10"></div>
-            <div>
-              <!-- <p class="font-bold text-2xl mb-0.5 bg-gradient-to-r from-[#45B653] to-[#3da149] bg-clip-text text-transparent"
-                style="font-family:'Sora',sans-serif;">
-                4.9<span>★</span>
-              </p> -->
-              <!-- <p class="text-black text-xs uppercase tracking-wider font-bold">
-                Avaliação média
-              </p> -->
-            </div>
-            <div class="w-px bg-white/10"></div>
-
-          </div>
+      <div>
+        <div class="reveal inline-flex items-center gap-2.5 border border-black/20 bg-black/5 backdrop-blur-sm rounded-full px-4 py-2 mb-8">
+          <span class="w-2 h-2 rounded-full bg-[#45B653] pulse"></span>
+          <span class="text-black font-medium text-xs tracking-wider uppercase" style="font-family:'Sora',sans-serif;">
+            Laboratório credenciado · SENATRAN
+          </span>
         </div>
 
-        <!-- RIGHT — clinical card -->
-<div class="reveal d2 float">
-  <div class="bg-white rounded-2xl overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,.4)] border border-white/8">
-    <!-- top accent -->
-    <div class="h-1 w-full" style="background:linear-gradient(90deg,#45B653,#317ABE)"></div>
+        <h1 class="reveal d1 text-[#0d1b2a] leading-[1.06] tracking-tight mb-6" style="font-family:'Sora',sans-serif; font-size:clamp(2.4rem,5vw,3.6rem); font-weight:700;">
+          Exame Toxicológico<br>
+          <span style="color:#45B653;">Preciso, Rápido</span> <br>
+          e <span style="background:linear-gradient(90deg,#45B653,#317ABE);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Certificado.</span>
+        </h1>
 
-    <div class="p-8">
-      <!-- Header -->
-      <div class="flex items-center gap-4 mb-8 pb-7 border-b border-[#e4e9ef]">
-        <div class="w-12 h-12 rounded-xl flex items-center justify-center"
-          style="background:linear-gradient(135deg,#e8f8ea,#e5f0fb)">
-          <i class="fa-solid fa-microscope text-xl" style="color:#45B653;"></i>
+        <p class="reveal d2 text-gray-600 text-lg leading-relaxed mb-10 max-w-md" style="font-weight:300;">
+          Laudos aceitos para primeira <strong class="text-black font-semibold">CNH A/B e renovação C/D/E</strong>, admissões empresariais e concursos públicos. 
+        </p>
+
+        <div class="reveal d3 flex flex-col sm:flex-row gap-3">
+          <a href="https://wa.me/5541992858515?text=Olá!%20Quero%20agendar%20meu%20exame." target="_blank"
+             class="flex items-center justify-center gap-2.5 bg-[#45B653] hover:bg-[#339940] text-white font-semibold text-base px-7 py-4 rounded-lg transition-all duration-200 hover:-translate-y-0.5"
+             style="font-family:'Sora',sans-serif;">
+            <i class="fa-brands fa-whatsapp text-lg"></i> Agendar via WhatsApp
+          </a>
         </div>
-        <div>
-          <p class="font-semibold text-[#0d1b2a] text-sm" style="font-family:'Sora',sans-serif;">
-            Exame Toxicológico
-          </p>
-          <p class="text-xs text-[#5a6a7a]">Análise por cabelo / pelo corporal</p>
-        </div>
-        <span class="ml-auto text-[10px] font-bold px-3 py-1.5 rounded-full bg-[#45B653]/10 text-[#45B653] uppercase tracking-wider"
-          style="font-family:'Sora',sans-serif;">
-          Credenciado
-        </span>
       </div>
 
-      <!-- Metrics: Ajustado para gap-5 para maior respiro -->
-      <!-- <div class="grid grid-cols-3 gap-5 mb-7">
-        <div class="text-center p-5 rounded-xl bg-[#f5f7fa] border border-[#e4e9ef]">
-          <p class="text-2xl font-bold text-[#0d1b2a] leading-none mb-2" style="font-family:'Sora',sans-serif;">72h</p>
-          <p class="text-[10px] font-bold text-[#5a6a7a]/60 uppercase tracking-widest">Resultado</p>
-        </div>
-        <div class="text-center p-5 rounded-xl bg-[#f5f7fa] border border-[#e4e9ef]">
-          <p class="text-2xl font-bold text-[#0d1b2a] leading-none mb-2" style="font-family:'Sora',sans-serif;">180d</p>
-          <p class="text-[10px] font-bold text-[#5a6a7a]/60 uppercase tracking-widest">Janela</p>
-        </div>
-        <div class="text-center p-5 rounded-xl bg-[#f5f7fa] border border-[#e4e9ef]">
-          <p class="text-2xl font-bold text-[#0d1b2a] leading-none mb-2" style="font-family:'Sora',sans-serif;">5a</p>
-          <p class="text-[10px] font-bold text-[#5a6a7a]/60 uppercase tracking-widest">Validade</p>
-        </div>
-      </div> -->
+      <div class="reveal d2 float relative">
+        <div class="bg-white rounded-2xl overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,.15)] border border-[#e4e9ef]">
+          <div class="h-1 w-full" style="background:linear-gradient(90deg,#45B653,#317ABE)"></div>
 
-      <!-- Detection Image: Única imagem laboratorio.png com mb-8 para dar espaço -->
-      <!-- Imagem única com bordas arredondadas e sombra interna -->
-<div class="rounded-2xl overflow-hidden mb-8 h-48">
-  <img src="midia/laboratorio.png" 
-       alt="Laboratório Labsed" 
-       class="w-full h-full object-cover rounded-2xl">
+          <div class="p-8">
+            <div class="flex items-center gap-4 mb-8 pb-7 border-b border-[#e4e9ef]">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center" style="background:linear-gradient(135deg,#e8f8ea,#e5f0fb)">
+                <i class="fa-solid fa-microscope text-xl" style="color:#45B653;"></i>
+              </div>
+              <div>
+                <p class="font-semibold text-[#0d1b2a] text-sm" style="font-family:'Sora',sans-serif;">
+                  Exame Toxicológico
+                </p>
+                <p class="text-xs text-[#5a6a7a]">Análise por cabelo / pelo corporal</p>
+              </div>
+              <span class="ml-auto text-[10px] font-bold px-3 py-1.5 rounded-full bg-[#45B653]/10 text-[#45B653] uppercase tracking-wider" style="font-family:'Sora',sans-serif;">
+                Credenciado
+              </span>
+            </div>
+
+            <div class="rounded-2xl overflow-hidden mb-8">
+  <img 
+    src="midia/laboratorio.png" 
+    alt="Laboratório Labsed" 
+    class="w-full h-auto rounded-2xl"
+  >
 </div>
 
-      <!-- Tags Informativas: Fonte aumentada para 11px e padding maior -->
-<div class="flex flex-wrap gap-2 pt-2">
-  <span class="bg-[#45B653]/10 text-[#45B653] text-[11px] font-bold px-4 py-2 rounded-lg border border-[#45B653]/10 uppercase tracking-tight">
-    CNH C/D/E
-  </span>
-  <span class="bg-blue-50 text-blue-700 text-[11px] font-bold px-4 py-2 rounded-lg border border-blue-100 uppercase tracking-tight">
-    Empresas
-  </span>
-  <span class="bg-orange-50 text-orange-700 text-[11px] font-bold px-4 py-2 rounded-lg border border-orange-100 uppercase tracking-tight">
-    Concursos
-  </span>
-  <span class="bg-emerald-50 text-emerald-700 text-[11px] font-bold px-4 py-2 rounded-lg border border-emerald-100 uppercase tracking-tight">
-    DENATRAN
-  </span>
-</div>
-
-            
-
-          <!-- Floating badges -->
-          <div
-            class="absolute -top-4 -right-5 bg-white rounded-xl shadow-[0_8px_28px_rgba(0,0,0,.12)] border border-[#e4e9ef] px-4 py-2.5 flex items-center gap-2 hidden lg:flex">
-            <i class="fa-solid fa-shield-check text-[#45B653] text-sm"></i>
-            <span class="text-xs font-semibold text-[#0d1b2a]" style="font-family:'Sora',sans-serif;">Lab
-              Credenciado</span>
-          </div>
-          <div
-            class="absolute -bottom-4 -left-5 bg-white rounded-xl shadow-[0_8px_28px_rgba(0,0,0,.12)] border border-[#e4e9ef] px-4 py-2.5 flex items-center gap-2 hidden lg:flex">
-            <i class="fa-solid fa-file-certificate text-[#317ABE] text-sm"></i>
-            <span class="text-xs font-semibold text-[#0d1b2a]" style="font-family:'Sora',sans-serif;">Laudo com validade
-              legal</span>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="bg-[#45B653]/10 text-[#45B653] text-[11px] font-bold px-4 py-2 rounded-lg border border-[#45B653]/10 uppercase tracking-tight">
+                CNH C/D/E
+              </span>
+              <span class="bg-blue-50 text-blue-700 text-[11px] font-bold px-4 py-2 rounded-lg border border-blue-100 uppercase tracking-tight">
+                Empresas
+              </span>
+              <span class="bg-orange-50 text-orange-700 text-[11px] font-bold px-4 py-2 rounded-lg border border-orange-100 uppercase tracking-tight">
+                Concursos
+              </span>
+              <span class="bg-emerald-50 text-emerald-700 text-[11px] font-bold px-4 py-2 rounded-lg border border-emerald-100 uppercase tracking-tight">
+                SENATRAN
+              </span>
+            </div>
           </div>
         </div>
 
+        <div class="absolute -top-4 -right-5 bg-white rounded-xl shadow-[0_8px_28px_rgba(0,0,0,.12)] border border-[#e4e9ef] px-4 py-2.5 hidden lg:flex items-center gap-2 z-20">
+          <i class="fa-solid fa-circle-check text-[#45B653] text-sm"></i>
+          <span class="text-xs font-semibold text-[#0d1b2a]" style="font-family:'Sora',sans-serif;">Lab Credenciado</span>
+        </div>
+        
+        <div class="absolute -bottom-4 -left-5 bg-white rounded-xl shadow-[0_8px_28px_rgba(0,0,0,.12)] border border-[#e4e9ef] px-4 py-2.5 hidden lg:flex items-center gap-2 z-20">
+          <i class="fa-solid fa-file-invoice text-[#317ABE] text-sm"></i>
+          <span class="text-xs font-semibold text-[#0d1b2a]" style="font-family:'Sora',sans-serif;">Laudo com validade legal</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="reveal border-t border-[#e4e9ef] pt-8 flex flex-row flex-nowrap items-center gap-4 overflow-hidden text-left">
+      <p class="text-[#2c3e52] font-semibold text-sm uppercase tracking-wider whitespace-nowrap flex-shrink-0" style="font-family:'Sora',sans-serif;">
+        Setores Atendidos:
+      </p>
+      <div class="flex flex-row flex-nowrap items-center gap-2 lg:gap-4 flex-shrink-0">
+        <span class="bg-[#f1f5f9] text-[#5a6a7a] px-4 py-2 rounded-full text-xs font-medium border border-[#e4e9ef] whitespace-nowrap">Rodoviário</span>
+        <span class="bg-[#f1f5f9] text-[#5a6a7a] px-4 py-2 rounded-full text-xs font-medium border border-[#e4e9ef] whitespace-nowrap">Aviação</span>
+        <span class="bg-[#f1f5f9] text-[#5a6a7a] px-4 py-2 rounded-full text-xs font-medium border border-[#e4e9ef] whitespace-nowrap">Concursos Públicos</span>
+        <span class="bg-[#f1f5f9] text-[#5a6a7a] px-4 py-2 rounded-full text-xs font-medium border border-[#e4e9ef] whitespace-nowrap">Saúde</span>
       </div>
     </div>
-  </section>
+
+  </div>
+</section>
+
+  
 
   <!-- ============================================================
      TICKER STRIP
@@ -667,81 +623,73 @@
   <div class="max-w-6xl mx-auto px-6">
 
     <div class="text-center mb-16 reveal">
-      <p class="eyebrow mb-5 justify-center">Entenda o Processo</p>
+      <p class="eyebrow mb-5 inline-block">Entenda o Processo</p>
       <h2 class="text-[#0d1b2a]" style="font-family:'Sora',sans-serif; font-size:clamp(1.9rem,3.5vw,2.6rem); font-weight:700;">
         Como funciona o exame toxicológico?
       </h2>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-16 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-      <!-- LEFT: Texto e Timeline -->
       <div class="reveal">
-        <div class="max-w-xl mb-10">
-          <p class="text-[#5a6a7a] text-lg leading-relaxed mb-4">
-O exame utiliza amostras de queratina (cabelo ou pelos) para identificar substâncias com ampla margem de retroatividade. É o método mais seguro exigido pelo DENATRAN para categorias C, D e E, além de concursos e admissões          </p>
-          <p class="text-[#5a6a7a] text-lg leading-relaxed mb-4">
-            Exigido pelo DENATRAN para categorias <strong class="text-[#0d1b2a] font-semibold">C, D e E</strong>, além de concursos e admissões.
+        <div class="max-w-xl mb-10 space-y-4">
+          <p class="text-[#5a6a7a] text-base leading-relaxed">
+            O exame utiliza amostras de queratina (cabelo ou pelos) para identificar substâncias com ampla margem de retroatividade. É o método mais seguro e preciso para mapeamento de consumo a longo prazo.
+          </p>
+          <p class="text-[#5a6a7a] text-base leading-relaxed">
+            Exigido pelo **SENATRAN** para obtenção e renovação das categorias <strong class="text-[#0d1b2a] font-semibold">C, D e E</strong>, além de acompanhar processos de admissões empresariais e concursos públicos.
           </p>
         </div>
 
-        <!-- Alert box: Substâncias -->
-<div class="flex gap-5 bg-gradient-to-r from-white to-[#f0faf1] border border-[#45B653]/20 rounded-2xl p-6 mb-12 shadow-sm">
-  <div class="w-11 h-11 rounded-xl bg-[#45B653] flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#45B653]/20">
-    <i class="fa-solid fa-heart-pulse text-white text-base"></i>
-  </div>
-  <div>
-    <p class="font-bold text-[#0d1b2a] text-sm mb-1" style="font-family:'Sora',sans-serif;">Cuidando da sua Jornada</p>
-    <p class="text-[13px] text-[#5a6a7a] leading-relaxed">Nosso painel completo identifica as principais substâncias exigidas pela legislação, assegurando que sua saúde esteja sempre em primeiro lugar e seu caminho livre de riscos.</p>
-  </div>
-</div>
+        <div class="flex gap-5 bg-gradient-to-r from-white to-[#f0faf1] border border-[#45B653]/20 rounded-2xl p-6 mb-12 shadow-sm">
+          <div class="w-11 h-11 rounded-xl bg-[#45B653] flex items-center justify-center flex-shrink-0 shadow-lg shadow-[#45B653]/20">
+            <i class="fa-solid fa-heart-pulse text-white text-base"></i>
+          </div>
+          <div>
+            <p class="font-bold text-[#0d1b2a] text-sm mb-1" style="font-family:'Sora',sans-serif;">Cuidando da sua Jornada</p>
+            <p class="text-[13px] text-[#5a6a7a] leading-relaxed">Nosso painel completo identifica as principais substâncias exigidas pela legislação, assegurando que sua saúde esteja sempre em primeiro lugar e seu caminho livre de riscos.</p>
+          </div>
+        </div>
 
-        <!-- Steps com Linha Conectora -->
         <div class="space-y-0 relative">
-          <!-- Linha Vertical Conectora -->
           <div class="absolute left-[17px] top-4 bottom-10 w-0.5 bg-gradient-to-b from-[#45B653] to-[#317ABE] opacity-20"></div>
 
-          <!-- Step 1 -->
           <div class="relative flex gap-6 pb-10 group">
             <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-white text-xs font-bold z-10 transition-transform group-hover:scale-110" style="background:linear-gradient(135deg,#45B653,#339940); font-family:'Sora',sans-serif; box-shadow: 0 4px 12px rgba(69,182,83,0.3);">1</div>
             <div>
-              <p class="font-bold text-[#0d1b2a] text-base mb-1" style="font-family:'Sora',sans-serif;">Coleta Captação</p>
-              <p class="text-sm text-[#5a6a7a]">Realizada de forma rápida em nossa unidade em Curitiba.</p>
+              <p class="font-bold text-[#0d1b2a] text-base mb-1" style="font-family:'Sora',sans-serif;">Coleta Eficiente</p>
+              <p class="text-sm text-[#5a6a7a] leading-relaxed">Realizada de forma rápida e indolor em nossa unidade de atendimento.</p>
             </div>
           </div>
 
-          <!-- Step 2 -->
           <div class="relative flex gap-6 pb-10 group">
             <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-white text-xs font-bold z-10 transition-transform group-hover:scale-110" style="background:linear-gradient(135deg,#45B653,#339940); font-family:'Sora',sans-serif; box-shadow: 0 4px 12px rgba(69,182,83,0.3);">2</div>
             <div>
               <p class="font-bold text-[#0d1b2a] text-base mb-1" style="font-family:'Sora',sans-serif;">Identificação Digital</p>
-              <p class="text-sm text-[#5a6a7a]">Captação de imagens e dados integrados diretamente ao sistema.</p>
+              <p class="text-sm text-[#5a6a7a] leading-relaxed">Captação segura de imagens e dados integrados diretamente aos sistemas oficiais.</p>
             </div>
           </div>
 
-          <!-- Step 3 -->
           <div class="relative flex gap-6 pb-10 group">
             <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-white text-xs font-bold z-10 transition-transform group-hover:scale-110" style="background:linear-gradient(135deg,#317ABE,#1e5f9e); font-family:'Sora',sans-serif; box-shadow: 0 4px 12px rgba(49,122,190,0.3);">3</div>
             <div>
               <p class="font-bold text-[#0d1b2a] text-base mb-1" style="font-family:'Sora',sans-serif;">Análise Laboratorial</p>
-              <p class="text-sm text-[#5a6a7a]">Exame processado com tecnologia de ponta no próprio Lab Labsed.</p>
+              <p class="text-sm text-[#5a6a7a] leading-relaxed">Amostras processadas com tecnologia analítica de ponta e máxima blindagem contra erros.</p>
             </div>
           </div>
 
-          <!-- Step 4 -->
           <div class="relative flex gap-6 group">
             <div class="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 text-white text-xs font-bold z-10 transition-transform group-hover:scale-110" style="background:linear-gradient(135deg,#317ABE,#1e5f9e); font-family:'Sora',sans-serif; box-shadow: 0 4px 12px rgba(49,122,190,0.3);">4</div>
             <div>
               <p class="font-bold text-[#0d1b2a] text-base mb-1" style="font-family:'Sora',sans-serif;">Resultado Online</p>
-              <p class="text-sm text-[#5a6a7a]">Liberação do laudo oficial em até 72h para consulta e impressão.</p>
+              <p class="text-sm text-[#5a6a7a] leading-relaxed">Liberação do laudo oficial em até 72 horas diretamente no sistema para consulta e impressão.</p>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- RIGHT: Clinical Card -->
-      <div class="reveal d2 sticky top-28">
-        <div class="bg-white rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(13,27,42,0.08)] border border-[#e4e9ef]">
+      <div class="reveal d2 lg:sticky lg:top-28">
+        <div class="bg-white rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(13,27,42,0.05)] border border-[#e4e9ef]">
           <div class="h-2 w-full" style="background:linear-gradient(90deg,#45B653,#317ABE)"></div>
           
           <div class="p-10">
@@ -763,29 +711,26 @@ O exame utiliza amostras de queratina (cabelo ou pelos) para identificar substâ
               </div>
             </div>
 
-            <!-- Timeline Divider -->
             <div class="flex items-center gap-4 text-[11px] font-bold text-[#45B653] mb-8">
               <span class="flex-1 h-px bg-gradient-to-r from-transparent to-[#e4e9ef]"></span>
               <span class="bg-[#e8f8ea] px-4 py-1.5 rounded-full uppercase tracking-widest">Resultado em até 72 horas</span>
               <span class="flex-1 h-px bg-gradient-to-l from-transparent to-[#e4e9ef]"></span>
             </div>
 
-            <!-- Laudo Card -->
-            <div class="bg-[#45B653] rounded-2xl p-8 text-center text-white shadow-xl shadow-[#45B653]/20 mb-8">
+            <div class="bg-[#45B653] rounded-2xl p-8 text-center text-white shadow-xl shadow-[#45B653]/15 mb-8">
               <i class="fa-solid fa-circle-check text-3xl mb-4 opacity-90"></i>
               <p class="font-bold text-lg mb-1" style="font-family:'Sora',sans-serif;">Laudo Oficial</p>
-              <p class="text-sm opacity-90">Pronto para CNH e Concursos</p>
+              <p class="text-sm opacity-90">Inserido diretamente na base do Renach</p>
             </div>
 
-            <!-- Documentos -->
-            <div class="space-y-4 pt-4 border-t border-[#e4e9ef]">
-              <p class="text-[11px] font-bold text-[#5a6a7a]/60 uppercase tracking-[0.2em] mb-4" style="font-family:'Sora',sans-serif;">O que você precisa</p>
+            <div class="space-y-4 pt-6 border-t border-[#e4e9ef]">
+              <p class="text-[11px] font-bold text-[#5a6a7a]/60 uppercase tracking-[0.2em]" style="font-family:'Sora',sans-serif;">O que você precisa</p>
               <div class="grid gap-3">
                 <div class="flex items-center gap-3 text-sm text-[#0d1b2a] font-medium">
-                  <i class="fa-solid fa-check text-[#45B653]"></i> RG ou CNH Original
+                  <i class="fa-solid fa-check text-[#45B653] flex-shrink-0"></i> Documento de identificação original (RG ou CNH)
                 </div>
                 <div class="flex items-center gap-3 text-sm text-[#0d1b2a] font-medium">
-                  <i class="fa-solid fa-check text-[#45B653]"></i> 5 minutos para coleta
+                  <i class="fa-solid fa-check text-[#45B653] flex-shrink-0"></i> Não necessita de jejum ou preparo prévio
                 </div>
               </div>
             </div>
@@ -1059,17 +1004,7 @@ O exame utiliza amostras de queratina (cabelo ou pelos) para identificar substâ
       </div> 
     </div> 
 
-    <div class="reveal border-t border-[#e4e9ef] pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-      <p class="text-[#2c3e52] font-semibold text-sm uppercase tracking-wider" style="font-family:'Sora',sans-serif;">
-        Setores Atendidos:
-      </p>
-      <div class="flex flex-wrap justify-center gap-3 lg:gap-6">
-        <span class="bg-[#f1f5f9] text-[#5a6a7a] px-4 py-2 rounded-full text-xs font-medium border border-[#e4e9ef]"> Rodoviário</span>
-        <span class="bg-[#f1f5f9] text-[#5a6a7a] px-4 py-2 rounded-full text-xs font-medium border border-[#e4e9ef]"> Aviação</span>
-        <span class="bg-[#f1f5f9] text-[#5a6a7a] px-4 py-2 rounded-full text-xs font-medium border border-[#e4e9ef]"> Concursos Públicos</span>
-        <span class="bg-[#f1f5f9] text-[#5a6a7a] px-4 py-2 rounded-full text-xs font-medium border border-[#e4e9ef]"> Saúde</span>
-      </div>
-    </div>
+    
     
   </div>
 </section>
@@ -1086,35 +1021,75 @@ O exame utiliza amostras de queratina (cabelo ou pelos) para identificar substâ
 
     <div class="text-center mb-14 reveal">
       <p class="eyebrow mb-5 inline-block">Localização</p>
+
       <h2 class="text-[#0d1b2a] mb-3"
         style="font-family:'Sora',sans-serif; font-size:clamp(1.9rem,3.5vw,2.6rem); font-weight:700;">
         Onde Estamos
       </h2>
-      <p class="text-[#5a6a7a]">Conheça nossas unidades e pontos de atendimento.</p>
+
+      <p class="text-[#5a6a7a]">
+        Conheça nossas unidades e pontos de atendimento.
+      </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_2fr] gap-8 lg:gap-12 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.4fr] gap-8 lg:gap-10 items-start">
 
-      <div class="lg:sticky lg:top-28 reveal flex flex-col gap-4">
-  <div class="relative h-[350px] lg:h-[500px] w-full rounded-2xl overflow-hidden shadow-sm">
-    <img src="midia/localizacao-unidade.png" 
-         alt="Nossa Estrutura Labsed" 
-         class="w-full h-[90%] object-cover">
-  </div>
-  <p class="hidden lg:block text-xs text-[#5a6a7a] text-center italic">
-    Atendimento estruturado para máxima agilidade e conforto.
-  </p>
-</div>
+      <!-- IMAGEM -->
+      <div class="reveal flex flex-col gap-4">
 
+        <div class="w-full rounded-2xl overflow-hidden shadow-sm bg-[#f5f7fa]">
+          <img 
+            src="midia/localizacao-unidade.png"
+            alt="Nossa Estrutura Labsed"
+            class="w-full h-auto object-contain"
+          >
+        </div>
+
+        <p class="hidden lg:block text-xs text-[#5a6a7a] text-center italic">
+          Atendimento estruturado para máxima agilidade e conforto.
+        </p>
+
+      </div>
+
+      <!-- UNIDADES -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 reveal">
-        
+
+        <!-- MATRIZ -->
         <div class="sm:col-span-2 flex items-start gap-4 p-5 bg-[#f5f7fa] border border-[#e4e9ef] rounded-xl transition-colors hover:border-[#45B653]/30">
+
           <div class="w-10 h-10 rounded-lg bg-white border border-[#e4e9ef] flex items-center justify-center shadow-sm flex-shrink-0 mt-0.5">
             <i class="fa-solid fa-location-dot text-[#45B653]"></i>
           </div>
+
           <div>
-            <p class="font-bold text-[#0d1b2a] text-sm" style="font-family:'Sora',sans-serif;">Matriz | Colombo - PR</p>
-            <p class="text-xs text-[#5a6a7a] mt-1 leading-relaxed">Rua Da Pedreira, 101 – Campo Pequeno – Sala 01 - Colombo/Paraná – CEP 83.441-010</p>
+            <p class="font-bold text-[#0d1b2a] text-sm"
+              style="font-family:'Sora',sans-serif;">
+              Matriz | Colombo - PR
+            </p>
+
+            <p class="text-xs text-[#5a6a7a] mt-1 leading-relaxed">
+              Rua Da Pedreira, 101 – Campo Pequeno – Sala 01 -
+              Colombo/Paraná – CEP 83.441-010
+            </p>
+          </div>
+
+        </div>
+
+        <!-- UNIDADES -->
+        <div class="flex items-center gap-4 p-5 bg-[#f5f7fa] border border-[#e4e9ef] rounded-xl transition-colors hover:border-[#45B653]/30">
+          <div class="w-10 h-10 rounded-lg bg-white border border-[#e4e9ef] flex items-center justify-center shadow-sm flex-shrink-0">
+            <i class="fa-solid fa-location-dot text-[#317ABE]"></i>
+          </div>
+
+          <div>
+            <p class="font-bold text-[#0d1b2a] text-sm"
+              style="font-family:'Sora',sans-serif;">
+              Curitiba - PR
+            </p>
+
+            <p class="text-xs text-[#5a6a7a] mt-0.5">
+              Unidade de Atendimento
+            </p>
           </div>
         </div>
 
@@ -1122,9 +1097,16 @@ O exame utiliza amostras de queratina (cabelo ou pelos) para identificar substâ
           <div class="w-10 h-10 rounded-lg bg-white border border-[#e4e9ef] flex items-center justify-center shadow-sm flex-shrink-0">
             <i class="fa-solid fa-location-dot text-[#317ABE]"></i>
           </div>
+
           <div>
-            <p class="font-bold text-[#0d1b2a] text-sm" style="font-family:'Sora',sans-serif;">Curitiba - PR</p>
-            <p class="text-xs text-[#5a6a7a] mt-0.5">Unidade de Atendimento</p>
+            <p class="font-bold text-[#0d1b2a] text-sm"
+              style="font-family:'Sora',sans-serif;">
+              Joinville - SC
+            </p>
+
+            <p class="text-xs text-[#5a6a7a] mt-0.5">
+              Unidade de Atendimento
+            </p>
           </div>
         </div>
 
@@ -1132,9 +1114,16 @@ O exame utiliza amostras de queratina (cabelo ou pelos) para identificar substâ
           <div class="w-10 h-10 rounded-lg bg-white border border-[#e4e9ef] flex items-center justify-center shadow-sm flex-shrink-0">
             <i class="fa-solid fa-location-dot text-[#317ABE]"></i>
           </div>
+
           <div>
-            <p class="font-bold text-[#0d1b2a] text-sm" style="font-family:'Sora',sans-serif;">Joinville - SC</p>
-            <p class="text-xs text-[#5a6a7a] mt-0.5">Unidade de Atendimento</p>
+            <p class="font-bold text-[#0d1b2a] text-sm"
+              style="font-family:'Sora',sans-serif;">
+              Alm. Tamandaré - PR
+            </p>
+
+            <p class="text-xs text-[#5a6a7a] mt-0.5">
+              Unidade de Atendimento
+            </p>
           </div>
         </div>
 
@@ -1142,9 +1131,16 @@ O exame utiliza amostras de queratina (cabelo ou pelos) para identificar substâ
           <div class="w-10 h-10 rounded-lg bg-white border border-[#e4e9ef] flex items-center justify-center shadow-sm flex-shrink-0">
             <i class="fa-solid fa-location-dot text-[#317ABE]"></i>
           </div>
+
           <div>
-            <p class="font-bold text-[#0d1b2a] text-sm" style="font-family:'Sora',sans-serif;">Alm. Tamandaré - PR</p>
-            <p class="text-xs text-[#5a6a7a] mt-0.5">Unidade de Atendimento</p>
+            <p class="font-bold text-[#0d1b2a] text-sm"
+              style="font-family:'Sora',sans-serif;">
+              Campo Largo - PR
+            </p>
+
+            <p class="text-xs text-[#5a6a7a] mt-0.5">
+              Unidade de Atendimento
+            </p>
           </div>
         </div>
 
@@ -1152,9 +1148,16 @@ O exame utiliza amostras de queratina (cabelo ou pelos) para identificar substâ
           <div class="w-10 h-10 rounded-lg bg-white border border-[#e4e9ef] flex items-center justify-center shadow-sm flex-shrink-0">
             <i class="fa-solid fa-location-dot text-[#317ABE]"></i>
           </div>
+
           <div>
-            <p class="font-bold text-[#0d1b2a] text-sm" style="font-family:'Sora',sans-serif;">Campo Largo - PR</p>
-            <p class="text-xs text-[#5a6a7a] mt-0.5">Unidade de Atendimento</p>
+            <p class="font-bold text-[#0d1b2a] text-sm"
+              style="font-family:'Sora',sans-serif;">
+              Campina Grande - PR
+            </p>
+
+            <p class="text-xs text-[#5a6a7a] mt-0.5">
+              Unidade de Atendimento
+            </p>
           </div>
         </div>
 
@@ -1162,9 +1165,16 @@ O exame utiliza amostras de queratina (cabelo ou pelos) para identificar substâ
           <div class="w-10 h-10 rounded-lg bg-white border border-[#e4e9ef] flex items-center justify-center shadow-sm flex-shrink-0">
             <i class="fa-solid fa-location-dot text-[#317ABE]"></i>
           </div>
+
           <div>
-            <p class="font-bold text-[#0d1b2a] text-sm" style="font-family:'Sora',sans-serif;">Campina Grande - PR</p>
-            <p class="text-xs text-[#5a6a7a] mt-0.5">Unidade de Atendimento</p>
+            <p class="font-bold text-[#0d1b2a] text-sm"
+              style="font-family:'Sora',sans-serif;">
+              Araucária - PR
+            </p>
+
+            <p class="text-xs text-[#5a6a7a] mt-0.5">
+              Unidade de Atendimento
+            </p>
           </div>
         </div>
 
@@ -1172,9 +1182,16 @@ O exame utiliza amostras de queratina (cabelo ou pelos) para identificar substâ
           <div class="w-10 h-10 rounded-lg bg-white border border-[#e4e9ef] flex items-center justify-center shadow-sm flex-shrink-0">
             <i class="fa-solid fa-location-dot text-[#317ABE]"></i>
           </div>
+
           <div>
-            <p class="font-bold text-[#0d1b2a] text-sm" style="font-family:'Sora',sans-serif;">Araucária - PR</p>
-            <p class="text-xs text-[#5a6a7a] mt-0.5">Unidade de Atendimento</p>
+            <p class="font-bold text-[#0d1b2a] text-sm"
+              style="font-family:'Sora',sans-serif;">
+              Caçador - SC
+            </p>
+
+            <p class="text-xs text-[#5a6a7a] mt-0.5">
+              Unidade de Atendimento
+            </p>
           </div>
         </div>
 
@@ -1182,23 +1199,24 @@ O exame utiliza amostras de queratina (cabelo ou pelos) para identificar substâ
           <div class="w-10 h-10 rounded-lg bg-white border border-[#e4e9ef] flex items-center justify-center shadow-sm flex-shrink-0">
             <i class="fa-solid fa-location-dot text-[#317ABE]"></i>
           </div>
+
           <div>
-            <p class="font-bold text-[#0d1b2a] text-sm" style="font-family:'Sora',sans-serif;">Caçador - SC</p>
-            <p class="text-xs text-[#5a6a7a] mt-0.5">Unidade de Atendimento</p>
+            <p class="font-bold text-[#0d1b2a] text-sm"
+              style="font-family:'Sora',sans-serif;">
+              Ferraz de Vasconcelos - SP
+            </p>
+
+            <p class="text-xs text-[#5a6a7a] mt-0.5">
+              Unidade de Atendimento
+            </p>
           </div>
         </div>
 
-        <div class="flex items-center gap-4 p-5 bg-[#f5f7fa] border border-[#e4e9ef] rounded-xl transition-colors hover:border-[#45B653]/30">
-          <div class="w-10 h-10 rounded-lg bg-white border border-[#e4e9ef] flex items-center justify-center shadow-sm flex-shrink-0">
-            <i class="fa-solid fa-location-dot text-[#317ABE]"></i>
-          </div>
-          <div>
-            <p class="font-bold text-[#0d1b2a] text-sm" style="font-family:'Sora',sans-serif;">Ferraz de Vasconcelos - SP</p>
-            <p class="text-xs text-[#5a6a7a] mt-0.5">Unidade de Atendimento</p>
-          </div>
-        </div>
+      </div>
 
-      </div> </div> </div>
+    </div>
+
+  </div>
 </section>
 
   <!-- ============================================================
@@ -1245,7 +1263,7 @@ O exame utiliza amostras de queratina (cabelo ou pelos) para identificar substâ
           <li><a href="#NossosDiferenciais" class="hover:underline">Nossos Diferenciais</a></li>
           <li><a href="#sobre-nos" class="hover:underline">Quem Somos</a></li>
           <li><a href="#sobre" class="hover:underline">Sobre o Exame</a></li>
-          <li><a href="#faq" class="hover:underline">Dúvidas Frequentes</a></li>
+        
         </ul>
       </div>
 
